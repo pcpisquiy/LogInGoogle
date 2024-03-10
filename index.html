@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="./Assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
     <link rel="stylesheet" href="./Assets/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./Assets/CSS/Bootrstap.css" />
-    <meta name="google-signin-client_id" content="661281961515-njumvcpopm9lrf1u3j1b2phs61bb0s4o.apps.googleusercontent.com">
-    
     <title>Document</title>
 </head>
 
 <body class="">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="container d-flex justify-content-center align-content-center" style="width: 100%; height: 100%;">
         <div class="card">
             <div class="card-body">
@@ -21,8 +20,13 @@
                 <hr>
                 <form  id="frmLogin">
                     <img src="./Assets/Images/LogoInter.png" class="rounded mx-auto d-block w-50" alt="./Assets/Images/LogoInter.png">
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                    
+                    <div id="g_id_onload"
+          data-client_id="661281961515-j8oogh9cua4329hhdfcq5b9urr3ngtev.apps.googleusercontent.com"
+          data-auto_prompt="false">
+      </div>
+
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>                               
                 </div>
             </div>
         </div>
@@ -30,11 +34,9 @@
 </div>
 </div>
 </div>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script type="text/javascript" src="./Assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function onSignIn(googleUser) {
-        console.log("Google");
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
